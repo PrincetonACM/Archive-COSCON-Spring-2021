@@ -1,0 +1,22 @@
+0 1 1 * startloop1
+
+startloop1 1 0 r startloop2
+startloop2 1 0 r startloop3
+startloop3 1 0 r startloop4
+
+startloop4 1 1 r startloop4
+
+startloop2 _ _ l endloop2
+startloop3 _ _ l endloop3
+startloop4 _ _ l endloop4
+
+endloop1 1 1 l endloop1 
+endloop2 1 1 l endloop2
+endloop3 1 1 l endloop3
+endloop4 1 1 l endloop4
+
+endloop2 0 1 r startloop1
+endloop3 0 1 r startloop2
+endloop4 0 1 r startloop3
+
+startloop1 _ * r halt
